@@ -1,0 +1,5 @@
+生成pos.vec训练数据数据文件
+opencv_createsamples.exe -vec pos.vec -info pos\pos.txt -bg neg\neg.txt -w 25 -h 25 -num 200
+
+开始训练
+opencv_traincascade.exe -vec pos.vec -bg neg\neg.txt -data xml -w 25 -h 25 -mem 6144 -numPos 300 -numNeg  900 -nstages 4 -nsplits 5
